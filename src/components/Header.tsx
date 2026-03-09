@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import { cn } from '../lib/utils';
-import logo from '../플로우스테이.png';
+import logo from '../logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
