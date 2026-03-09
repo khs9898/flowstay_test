@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSite } from '../context/SiteContext';
 import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import logo from '../logo.png';
 
 const Footer = () => {
   const { settings } = useSite();
@@ -11,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-6">
-              <img src="/logo.png" alt="FLOW STAY" className="h-8 w-auto brightness-0 invert" />
+              <img src={logo} alt="FLOW STAY" className="h-8 w-auto brightness-0 invert" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               플로우스테이는 주차장의 가치를 재정의하고, 최첨단 기술과 전문 컨설팅을 통해 공간의 수익성을 극대화합니다.

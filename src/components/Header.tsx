@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import { cn } from '../lib/utils';
+import logo from '../logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -34,7 +35,7 @@ const Header = () => {
               onClick={scrollToTop}
               className="flex items-center"
             >
-              <img src="/logo.png" alt="FLOW STAY" className="h-10 w-auto" />
+              <img src={logo} alt="FLOW STAY" className="h-10 w-auto" />
             </Link>
           </div>
 
