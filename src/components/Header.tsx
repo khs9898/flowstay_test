@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import { cn } from '../lib/utils';
+import logo from '../logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -32,11 +33,9 @@ const Header = () => {
             <Link 
               to="/" 
               onClick={scrollToTop}
-              className="text-2xl font-bold tracking-tighter" 
-              style={{ color: settings.primaryColor }}
+              className="flex items-center"
             >
-              FLOW STAY
-              <span className="text-sm font-normal ml-2 text-gray-400">플로우스테이</span>
+              <img src={logo} alt="FLOW STAY" className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -51,12 +50,6 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Link
-              to="/admin"
-              className="text-xs font-semibold px-3 py-1 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors"
-            >
-              관리자
-            </Link>
             <a
               href="#contact"
               className="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full text-white shadow-sm transition-all hover:scale-105"
@@ -92,13 +85,6 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Link
-              to="/admin"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-500"
-              onClick={() => setIsOpen(false)}
-            >
-              관리자 대시보드
-            </Link>
           </div>
         </div>
       )}

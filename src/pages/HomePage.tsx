@@ -4,6 +4,7 @@ import Services from '../components/Services';
 import Contact from '../components/Contact';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import teamImage from '../about-team.png';
 
 const HomePage = () => {
   return (
@@ -17,10 +18,9 @@ const HomePage = () => {
               <div className="relative">
                 <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1590674899484-13da0d1b58f5?auto=format&fit=crop&q=80&w=1000"
+                    src={teamImage}
                     alt="Flow Stay Team"
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>

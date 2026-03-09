@@ -30,9 +30,15 @@ const AdminDashboard = () => {
           </button>
         </nav>
         <div className="p-4 border-t border-gray-100">
-          <Link to="/" className="w-full flex items-center px-4 py-3 text-sm font-medium text-red-500 hover:bg-red-50 rounded-xl transition-all">
+          <button 
+            onClick={() => {
+              localStorage.removeItem('admin_auth');
+              window.location.href = '/';
+            }}
+            className="w-full flex items-center px-4 py-3 text-sm font-medium text-red-500 hover:bg-red-50 rounded-xl transition-all"
+          >
             <LogOut className="mr-3 h-5 w-5" /> 로그아웃
-          </Link>
+          </button>
         </div>
       </aside>
 
