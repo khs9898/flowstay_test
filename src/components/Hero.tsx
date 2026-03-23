@@ -14,7 +14,6 @@ const Hero = () => {
           src="https://images.unsplash.com/photo-1573163231162-80113439c4d9?auto=format&fit=crop&q=80&w=1920"
           alt="Modern Parking Lot"
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
       </div>
