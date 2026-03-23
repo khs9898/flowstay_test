@@ -1,3 +1,3 @@
-import logo from '../logo.png';
+import logo from './src/logo.png';
 
 // Existing code follows...
