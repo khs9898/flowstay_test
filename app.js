@@ -13,11 +13,11 @@ const english = {
   directionTitle: 'Better operations begin<br>with understanding.',
   principle1Title: 'Start with the context', principle1Text: 'Our starting point is understanding the spaces and everyday context in which parking is managed.',
   principle2Title: 'Make the flow clearer', principle2Text: 'We are exploring how a service can make complex parking operations easier to understand and navigate.',
-  principle3Title: 'Build step by step', principle3Text: 'We are at the pre-incorporation stage, shaping our idea and preparing for what comes next.',
+  principle3Title: 'Build step by step', principle3Text: 'Incorporated in September 2026, we are shaping our service and preparing for what comes next.',
   contactTitle: 'Let’s talk about<br>a better flow.', contactDescription: 'Questions or ideas about Flowstay<br>and PARKING BRIDGE? Get in touch.',
   contactLabel: 'PROJECT ENQUIRIES', emailCta: 'Send an email', copyCta: 'Copy address',
   emailNote: 'Opens your email app. You can also copy the address.',
-  footerDescription: 'Preparing PARKING BRIDGE, a parking management service.', footerStage: 'South Korea · Pre-incorporation', backTop: 'Back to top'
+  footerDescription: 'Preparing PARKING BRIDGE, a parking management service.', footerStage: 'South Korea · Incorporated Sep 2026', backTop: 'Back to top'
 };
 const elements = [...document.querySelectorAll('[data-i18n]')];
 const korean = Object.fromEntries(elements.map(element => [element.dataset.i18n, element.innerHTML]));
