@@ -1,19 +1,21 @@
 const english = {
-  skip: 'Skip to content', navProject: 'Our project', navDirection: 'Our approach', navContact: 'Get in touch ↗',
+  skip: 'Skip to content', navProject: 'Our project', navDirection: 'AI roadmap', navContact: 'Get in touch ↗',
   heroEyebrow: 'A NEW DIRECTION FOR PARKING', heroTitle: 'A better flow.<br>A better place<br>to <em>stay.</em>',
-  heroDescription: 'Parking connects people and places.<br>Flowstay is preparing PARKING BRIDGE,<br>a parking management service in South Korea.',
+  heroDescription: 'From reports to customer enquiries and product planning.<br>Flowstay is preparing PARKING BRIDGE,<br>with plans to bring AI into parking operations.',
   heroCta: 'Explore PARKING BRIDGE', heroFootnote: 'SOUTH KOREA · PRE-LAUNCH',
   artCaption: 'Connecting places. Thinking in flows.', artNote: 'Concept illustration of our service direction',
   bandText: 'A better flow.<br>A better place to stay.', bandCaption: 'Thoughtful about every moment in a space.',
   projectSide: 'The service we are preparing', projectStatus: 'PRE-LAUNCH · IN PREPARATION', projectKorean: 'A PROJECT BY FLOWSTAY',
-  projectHeading: 'A new connection.<br>A thoughtful approach to parking.',
-  projectDescription: 'PARKING BRIDGE is a parking management service being prepared by Flowstay. We are shaping its direction by considering what matters in day-to-day parking operations.',
-  projectDescription2: 'From understanding everyday friction to envisioning a better operating experience, we aim to create a service that brings parking spaces and operations closer together.',
-  projectCta: 'Talk about the project', directionSide: 'How we approach the work',
-  directionTitle: 'Better operations begin<br>with understanding.',
-  principle1Title: 'Start with the context', principle1Text: 'Our starting point is understanding the spaces and everyday context in which parking is managed.',
-  principle2Title: 'Make the flow clearer', principle2Text: 'We are exploring how a service can make complex parking operations easier to understand and navigate.',
-  principle3Title: 'Build step by step', principle3Text: 'Incorporated in September 2026, we are shaping our service and preparing for what comes next.',
+  projectHeading: 'Practical AI for<br>everyday parking operations.',
+  projectDescription: 'Flowstay is preparing PARKING BRIDGE, a parking management service in South Korea. We plan to use AI to automate operational reports, classify customer enquiries and route them to the responsible departments.',
+  projectDescription2: 'We also plan to use AI to help improve our license plate recognition system and suggest parking product configurations, prices and usage conditions. The service is in preparation; the AI capabilities below are planned.',
+  projectCta: 'Talk about the project', directionSide: 'Planned AI applications',
+  directionTitle: 'Less repetitive work.<br>Better-informed operations.',
+  aiIntro: 'We plan to start with Claude for internal development and coding assistance, then apply AI to the four areas below. These AI capabilities are not yet in operational use.',
+  principle1Title: 'Automated operational reports', principle1Text: 'We plan to use AI to organize parking operations data and summarize key information in operational reports, aiming to reduce repetitive reporting work.',
+  principle2Title: 'Enquiry classification and routing', principle2Text: 'We plan to classify customer enquiries with AI and assign them to the responsible departments based on enquiry type, helping each request reach the right team.',
+  principle3Title: 'Improving plate recognition', principle3Text: 'We plan to use AI in the development process to improve our license plate recognition system. Specific methods and their effectiveness will be assessed through development and validation.',
+  principle4Title: 'Flexible parking product suggestions', principle4Text: 'We plan to use AI to suggest parking product configurations, prices and usage conditions, helping operators review options and choose how to offer their products.',
   contactTitle: 'Let’s talk about<br>a better flow.', contactDescription: 'Questions or ideas about Flowstay<br>and PARKING BRIDGE? Get in touch.',
   contactLabel: 'PROJECT ENQUIRIES', emailCta: 'Send an email', copyCta: 'Copy address',
   emailNote: 'Opens your email app. You can also copy the address.',
@@ -37,7 +39,7 @@ function setLanguage(next) {
   document.querySelector('[data-band-label]').setAttribute('aria-label', next === 'en' ? 'About Flowstay' : '브랜드 소개');
   document.querySelector('[data-art-label]').setAttribute('aria-label', next === 'en' ? 'PARKING BRIDGE concept illustration: a route connecting parking spaces' : '주차 공간과 연결된 길을 표현한 PARKING BRIDGE 콘셉트 그래픽');
   document.title = next === 'en' ? 'Flowstay — A better flow for parking' : 'Flowstay — 주차 운영의 다음 흐름';
-  document.querySelector('meta[name="description"]').content = next === 'en' ? 'Flowstay is preparing PARKING BRIDGE, a parking management service in South Korea. Explore our project and approach.' : 'Flowstay는 주차 관리 서비스 PARKING BRIDGE를 준비합니다. 주차 운영의 다음 흐름을 함께 만들어갑니다.';
+  document.querySelector('meta[name="description"]').content = next === 'en' ? 'PARKING BRIDGE by Flowstay: planned AI for parking reports, enquiry routing, plate recognition improvements and parking product suggestions.' : 'Flowstay의 PARKING BRIDGE는 AI 기반 운영보고서, 문의 분류·배정, 차량번호 인식 개선, 주차 상품 제안을 준비하는 주차 관리 서비스입니다.';
   copyStatus.textContent = '';
   copyAttempt++;
   try { localStorage.setItem('flowstay-language', next); } catch { /* The page also works without browser storage. */ }
