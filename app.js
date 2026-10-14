@@ -1,45 +1,108 @@
 const english = {
-  skip: 'Skip to content', navProject: "Our product", navContact: 'Get in touch ↗',
-  heroEyebrow: "AI LICENSE PLATE RECOGNITION", heroTitle: "Parking starts<br>with <em>recognition.</em>",
-  heroDescription: "PARKING BRIDGE is Flowstay’s core product:<br>AI-powered license plate recognition software.<br>We are preparing it for parking environments.",
-  heroCta: 'Explore PARKING BRIDGE', heroFootnote: "SOUTH KOREA · IN DEVELOPMENT",
-  artCaption: "Parking starts with plate recognition.", artNote: "Concept illustration of a parking environment",
-  bandText: 'A better flow.<br>A better place to stay.', bandCaption: 'Thoughtful about every moment in a space.',
-  projectSide: "AI license plate recognition by Flowstay", projectStatus: "IN DEVELOPMENT", projectKorean: 'A PROJECT BY FLOWSTAY',
-  projectHeading: "AI license plate recognition.<br>PARKING BRIDGE.",
-  projectDescription: "PARKING BRIDGE is Flowstay’s core product: AI-powered license plate recognition software. We are preparing the product for parking environments, with vehicle plate recognition at its center.",
-  projectDescription2: "Flowstay approaches product development from the perspective of people who manage parking spaces. We focus on understanding where license plate recognition is needed and shaping our product around those needs.",
-  projectCta: "Ask about the product",
-  contactTitle: "Let’s talk about<br>plate recognition.", contactDescription: "Ask about PARKING BRIDGE,<br>or tell us where you need license plate recognition.",
-  contactLabel: "PRODUCT ENQUIRIES", emailCta: 'Send an email', copyCta: 'Copy address',
-  emailNote: 'Opens your email app. You can also copy the address.',
-  footerDescription: "Preparing PARKING BRIDGE, AI license plate recognition software.", footerStage: "South Korea · PARKING BRIDGE", backTop: 'Back to top'
+  "skip": "Skip to content",
+  "navAbout": "About us",
+  "navServices": "Services",
+  "navContact": "Contact",
+  "heroTitle": "Premium parking solutions.<br>Greater value for your space.",
+  "heroDescription": "Flowstay brings data and technology together<br>to provide parking operations and consulting services.",
+  "heroCta": "Explore our services",
+  "consultCta": "Consult with us",
+  "imageCaption": "Connecting spaces, technology and operations.",
+  "aboutTitle": "Your partner in<br>better parking operations.",
+  "aboutDescription": "Flowstay looks beyond day-to-day parking management to the value of each space. We combine data analysis and parking management technology to propose solutions suited to each client and site.",
+  "aboutDescription2": "Our understanding of parking operations, consulting and system implementation also informs PARKING BRIDGE, our AI license plate recognition software.",
+  "aboutCta": "Discover our services",
+  "servicesTitle": "Professional parking solutions<br>from Flowstay.",
+  "servicesDescription": "We consider the character of your space and its operating environment to find an approach that fits.",
+  "service1Title": "Parking operations",
+  "service1Text": "We work with you on operating plans and site management suited to the needs of your parking facility.",
+  "service1Tag": "Operating plans · Site management",
+  "service2Title": "Profitability consulting",
+  "service2Text": "We review operating data and usage patterns to assess the revenue structure and opportunities for improvement.",
+  "service2Tag": "Operational analysis · Recommendations",
+  "service3Title": "Parking management systems",
+  "service3Text": "We propose management systems based on the size of your facility and its operating needs.",
+  "service3Tag": "Systems suited to your site",
+  "service4Title": "Facility improvements",
+  "service4Text": "We review facilities and traffic flow to suggest improvements for a more convenient parking environment.",
+  "service4Tag": "Facility improvements · Space design",
+  "service5Title": "Coordinated management",
+  "service5Text": "We consider the full range of operational tasks, including monitoring, customer enquiries and on-site response.",
+  "service5Tag": "Monitoring · Enquiries · Site response",
+  "service6Title": "Remote service support",
+  "service6Text": "We propose simpler ways to handle recurring tasks such as passes, discount vouchers and user enquiries.",
+  "service6Tag": "Passes · Vouchers · User information",
+  "service7Title": "Operations for your building",
+  "service7Text": "We propose parking operations that reflect how your building is used and the needs of its visitors.",
+  "service7Tag": "Building-specific operations · Space value",
+  "service8Title": "Parking development consulting",
+  "service8Text": "We work with you to review development options for parking buildings, vacant land and other site types.",
+  "service8Tag": "Site assessment · Development options",
+  "productLabel": "AI LICENSE PLATE RECOGNITION",
+  "productHeading": "Smarter parking starts<br>with plate recognition.",
+  "productDescription": "PARKING BRIDGE is Flowstay’s core product: AI-powered license plate recognition software focused on recognizing vehicle plates in parking environments.",
+  "productDescription2": "We focus on understanding site requirements and developing recognition technology and products for parking operations.",
+  "productCta": "Ask about PARKING BRIDGE",
+  "visualCaption": "License plate recognition concept illustration",
+  "contactTitle": "Start a conversation<br>with Flowstay.",
+  "contactDescription": "Let’s explore how to improve your parking operations<br>and the value of your space.",
+  "topic1": "Operations & consulting",
+  "topic2": "System implementation",
+  "contactLabel": "EMAIL ENQUIRIES",
+  "contactPrompt": "Tell us about your space.",
+  "contactHelp": "Share your operational needs or ask us about our product.",
+  "emailCta": "Enquire by email",
+  "copyCta": "Copy address",
+  "emailNote": "Opens your email app. You can also copy the address.",
+  "footerDescription": "Bringing together data, technology and operational insight<br>to enhance the value of parking spaces.",
+  "footerServices": "OUR SERVICES",
+  "footerService1": "Parking operations",
+  "footerService2": "Profitability consulting",
+  "footerService3": "Management systems",
+  "footerProduct": "OUR PRODUCT",
+  "footerLpr": "AI license plate recognition software",
+  "footerContact": "CONTACT",
+  "backTop": "Back to top ↑"
 };
 const elements = [...document.querySelectorAll('[data-i18n]')];
 const korean = Object.fromEntries(elements.map(element => [element.dataset.i18n, element.innerHTML]));
 const languageButton = document.querySelector('[data-language]');
+const menuButton = document.querySelector('[data-menu]');
+const nav = document.querySelector('[data-nav-label]');
 const copyStatus = document.querySelector('[data-copy-status]');
 let language = 'ko';
 let copyAttempt = 0;
 
+function closeMenu() {
+  nav.classList.remove('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', language === 'en' ? 'Open menu' : '메뉴 열기');
+}
 function setLanguage(next) {
   language = next;
   document.documentElement.lang = next;
   const messages = next === 'en' ? english : korean;
   elements.forEach(element => { element.innerHTML = messages[element.dataset.i18n]; });
-  languageButton.innerHTML = `${next === 'en' ? 'KO' : 'EN'} <span aria-hidden="true">↗</span>`;
+  languageButton.textContent = next === 'en' ? 'KO' : 'EN';
   languageButton.setAttribute('aria-label', next === 'en' ? '한국어로 전환' : 'Switch to English');
-  document.querySelector('[data-nav-label]').setAttribute('aria-label', next === 'en' ? 'Main navigation' : '주요 메뉴');
-  document.querySelector('[data-band-label]').setAttribute('aria-label', next === 'en' ? 'About Flowstay' : '브랜드 소개');
-  document.querySelector('[data-art-label]').setAttribute('aria-label', next === 'en' ? 'PARKING BRIDGE concept illustration: a route connecting parking spaces' : '주차 공간과 연결된 길을 표현한 PARKING BRIDGE 콘셉트 그래픽');
-  document.title = next === 'en' ? 'Flowstay — AI License Plate Recognition' : 'Flowstay — AI 차량번호 인식 PARKING BRIDGE';
-  document.querySelector('meta[name="description"]').content = next === 'en' ? 'PARKING BRIDGE is Flowstay’s core product: AI-powered license plate recognition software. Explore our product and get in touch.' : 'Flowstay의 주력 제품 PARKING BRIDGE는 AI 기반 차량번호 인식 프로그램입니다. 제품 소개와 문의 안내를 만나보세요.';
+  nav.setAttribute('aria-label', next === 'en' ? 'Main navigation' : '주요 메뉴');
+  document.querySelector('[data-art-label]').setAttribute('aria-label', next === 'en' ? 'PARKING BRIDGE license plate recognition concept illustration' : 'PARKING BRIDGE 차량번호 인식 콘셉트 그래픽');
+  document.title = next === 'en' ? 'Flowstay — Premium Parking Solutions' : 'Flowstay — 공간의 가치를 높이는 주차 솔루션';
+  document.querySelector('meta[name="description"]').content = next === 'en' ? 'Parking operations, consulting and AI license plate recognition. Explore Flowstay services and our core product PARKING BRIDGE.' : '공간의 가치를 높이는 프리미엄 주차 솔루션. Flowstay의 주차 운영·컨설팅 서비스와 AI 차량번호 인식 프로그램 PARKING BRIDGE를 소개합니다.';
+  document.querySelector('meta[property="og:title"]').content = document.title;
+  document.querySelector('meta[property="og:description"]').content = document.querySelector('meta[name="description"]').content;
+  closeMenu();
   copyStatus.textContent = '';
   copyAttempt++;
-  try { localStorage.setItem('flowstay-language', next); } catch { /* The page also works without browser storage. */ }
+  try { localStorage.setItem('flowstay-language', next); } catch { /* The page works without browser storage. */ }
 }
-
 languageButton.addEventListener('click', () => setLanguage(language === 'ko' ? 'en' : 'ko'));
+menuButton.addEventListener('click', () => {
+  const open = nav.classList.toggle('is-open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', language === 'en' ? (open ? 'Close menu' : 'Open menu') : (open ? '메뉴 닫기' : '메뉴 열기'));
+});
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.querySelector('[data-copy]').addEventListener('click', async () => {
   const attempt = ++copyAttempt;
   try {

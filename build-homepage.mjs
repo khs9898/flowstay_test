@@ -1,7 +1,7 @@
 import { copyFile, mkdir, readFile } from 'node:fs/promises';
 
 const output = new URL('./flowstay-dist/', import.meta.url);
-const assets = ['index.html', 'styles.css', 'app.js', 'favicon.svg'];
+const assets = ['index.html', 'styles.css', 'app.js', 'favicon.svg', 'flowstay-logo.png'];
 await mkdir(output, { recursive: true });
 for (const asset of assets) {
   const source = new URL(asset, import.meta.url);
