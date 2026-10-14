@@ -1,26 +1,26 @@
 const english = {
-  skip: 'Skip to content', navProject: 'Our project', navDirection: 'AI roadmap', navContact: 'Get in touch ↗',
+  skip: 'Skip to content', navProject: "Our service", navDirection: "In development", navContact: 'Get in touch ↗',
   heroEyebrow: 'A NEW DIRECTION FOR PARKING', heroTitle: 'A better flow.<br>A better place<br>to <em>stay.</em>',
-  heroDescription: 'From reports to customer enquiries and product planning.<br>Flowstay is preparing PARKING BRIDGE,<br>with plans to bring AI into parking operations.',
+  heroDescription: "Less time on routine parking tasks.<br>More room for thoughtful decisions.<br>Meet PARKING BRIDGE, in preparation at Flowstay.",
   heroCta: 'Explore PARKING BRIDGE', heroFootnote: 'SOUTH KOREA · PRE-LAUNCH',
   artCaption: 'Connecting places. Thinking in flows.', artNote: 'Concept illustration of our service direction',
   bandText: 'A better flow.<br>A better place to stay.', bandCaption: 'Thoughtful about every moment in a space.',
-  projectSide: 'The service we are preparing', projectStatus: 'PRE-LAUNCH · IN PREPARATION', projectKorean: 'A PROJECT BY FLOWSTAY',
-  projectHeading: 'Practical AI for<br>everyday parking operations.',
-  projectDescription: 'Flowstay is preparing PARKING BRIDGE, a parking management service in South Korea. We plan to use AI to automate operational reports, classify customer enquiries and route them to the responsible departments.',
-  projectDescription2: 'We also plan to use AI to help improve our license plate recognition system, suggest parking product configurations, prices and usage conditions, and support parking business feasibility analysis. The service is in preparation; the AI capabilities below are planned.',
-  projectCta: 'Talk about the project', directionSide: 'Planned AI applications',
-  directionTitle: 'Less repetitive work.<br>Better-informed operations.',
-  aiIntro: 'We plan to start with Claude for internal development and coding assistance, then apply AI to the five areas below. These AI capabilities are not yet in operational use.',
-  principle1Title: 'Automated operational reports', principle1Text: 'We plan to use AI to organize parking operations data and summarize key information in operational reports, aiming to reduce repetitive reporting work.',
-  principle2Title: 'Enquiry classification and routing', principle2Text: 'We plan to classify customer enquiries with AI and assign them to the responsible departments based on enquiry type, helping each request reach the right team.',
-  principle3Title: 'Improving plate recognition', principle3Text: 'We plan to use AI in the development process to improve our license plate recognition system. Specific methods and their effectiveness will be assessed through development and validation.',
-  principle4Title: 'Flexible parking product suggestions', principle4Text: 'We plan to use AI to suggest parking product configurations, prices and usage conditions, helping operators review options and choose how to offer their products.',
-  principle5Title: 'Parking business feasibility analysis', principle5Text: 'We plan to use AI to organize information for evaluating parking ventures and support business feasibility analysis, providing insights to inform operational and go/no-go decisions.',
-  contactTitle: 'Let’s talk about<br>a better flow.', contactDescription: 'Questions or ideas about Flowstay<br>and PARKING BRIDGE? Get in touch.',
-  contactLabel: 'PROJECT ENQUIRIES', emailCta: 'Send an email', copyCta: 'Copy address',
+  projectSide: "A parking management service by Flowstay", projectStatus: 'PRE-LAUNCH · IN PREPARATION', projectKorean: 'A PROJECT BY FLOWSTAY',
+  projectHeading: "Making everyday parking<br>operations simpler.",
+  projectDescription: "Flowstay focuses on the people who manage parking spaces. We are preparing PARKING BRIDGE to reduce repetitive work and make operational information easier to understand.",
+  projectDescription2: "From reports and customer enquiries to plate recognition, product planning and business feasibility, we are building toward a service that connects everyday operations with business decisions.",
+  projectCta: "Ask about the service", directionSide: "PARKING BRIDGE · IN DEVELOPMENT",
+  directionTitle: "From everyday tasks<br>to your next business decision.",
+  aiIntro: "We are preparing features around the work parking operators do every day, with the aim of supporting routine management and helping them explore new ways to operate.",
+  principle1Title: "Automated operational reports", principle1Text: "We are preparing reports that organize operational data and summarize what matters, with the aim of reducing repetitive paperwork and making operations easier to understand.",
+  principle2Title: "Customer enquiry routing", principle2Text: "We are preparing a workflow to classify incoming enquiries by type and connect them with the responsible department, helping each request reach the right team.",
+  principle3Title: "Better plate recognition", principle3Text: "We aim to improve our license plate recognition system to reduce the effort of checking vehicle numbers on site, refining the recognition experience for parking operations.",
+  principle4Title: "Parking product suggestions", principle4Text: "We are preparing suggestions for product configurations, prices and usage conditions, helping operators consider and choose products that suit their operating needs.",
+  principle5Title: "Parking business feasibility", principle5Text: "We are preparing tools to organize and analyze information for evaluating parking ventures, providing a reference for decisions about business direction and whether to proceed.",
+  contactTitle: 'Let’s talk about<br>a better flow.', contactDescription: "Ask about our upcoming service,<br>or tell us what you need in parking operations.",
+  contactLabel: "SERVICE ENQUIRIES", emailCta: 'Send an email', copyCta: 'Copy address',
   emailNote: 'Opens your email app. You can also copy the address.',
-  footerDescription: 'Preparing PARKING BRIDGE, a parking management service.', footerStage: 'South Korea · Incorporated Sep 2026', backTop: 'Back to top'
+  footerDescription: 'Preparing PARKING BRIDGE, a parking management service.', footerStage: "South Korea · PARKING BRIDGE", backTop: 'Back to top'
 };
 const elements = [...document.querySelectorAll('[data-i18n]')];
 const korean = Object.fromEntries(elements.map(element => [element.dataset.i18n, element.innerHTML]));
@@ -40,7 +40,7 @@ function setLanguage(next) {
   document.querySelector('[data-band-label]').setAttribute('aria-label', next === 'en' ? 'About Flowstay' : '브랜드 소개');
   document.querySelector('[data-art-label]').setAttribute('aria-label', next === 'en' ? 'PARKING BRIDGE concept illustration: a route connecting parking spaces' : '주차 공간과 연결된 길을 표현한 PARKING BRIDGE 콘셉트 그래픽');
   document.title = next === 'en' ? 'Flowstay — A better flow for parking' : 'Flowstay — 주차 운영의 다음 흐름';
-  document.querySelector('meta[name="description"]').content = next === 'en' ? 'PARKING BRIDGE by Flowstay: planned AI for parking reports, enquiry routing, plate recognition improvements parking product suggestions and business feasibility analysis.' : 'Flowstay의 PARKING BRIDGE는 AI 기반 운영보고서, 문의 분류·배정, 차량번호 인식 개선, 주차 상품 제안과 사업성 분석을 준비하는 주차 관리 서비스입니다.';
+  document.querySelector('meta[name="description"]').content = next === 'en' ? 'Flowstay is preparing PARKING BRIDGE to support everyday parking operations and business decisions. Explore our service and upcoming features.' : 'Flowstay는 주차 운영의 일상과 사업의 의사결정을 돕는 주차 관리 서비스 PARKING BRIDGE를 준비합니다. 서비스 소개와 준비 중인 기능을 만나보세요.';
   copyStatus.textContent = '';
   copyAttempt++;
   try { localStorage.setItem('flowstay-language', next); } catch { /* The page also works without browser storage. */ }
